@@ -1,0 +1,157 @@
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+\PassOptionsToPackage{numbers, compress}{natbib}
+% before loading neurips_2019
+
+% ready for submission
+% \usepackage{neurips_2019}
+
+% to compile a preprint version, e.g., for submission to arXiv, add add the
+% [preprint] option:
+%     \usepackage[preprint]{neurips_2019}
+
+% to compile a camera-ready version, add the [final] option, e.g.:
+ \usepackage[final]{neurips_2019}
+
+% to avoid loading the natbib package, add option nonatbib:
+%     \usepackage[nonatbib]{neurips_2019}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+
+\title{Report Template for the Seminar on\\ Technical Aspects of Societal Challenges to ML}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to break the
+% lines. Using \AND forces a line break at that point. So, if LaTeX puts 3 of 4
+% authors names on the first line, and the last on the second line, try using
+% \AND instead of \And before the third author name.
+
+\author{%
+  Beate Beispiel \& Marcel Mustermann\\
+  MSc Informatik \& MSc Kognitionswissenschaften\\
+  University of Tübingen\\
+  Matrikelnummern 8888888 and 1234567\\
+  \texttt{[Beate.Beispiel|Marcel.Mustermann]@student.uni-tuebingen.de}
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  This template provides guidance on the structure for your 4 page report. Please feel free to deviate from the proposed structure if you feel that it is useful; but try to follow the spirit of the guidelines.
+  In the abstract, summarize the topic of your report in about 5-8 lines of text. Do not cite your assigned papers here, but instead give a very concise overview over the insights you report on in this text.
+\end{abstract}
+
+\section{Introduction}
+
+In this section, provide a brief overview of both the general topic of your assigned work (i.e.~Fairness, Privacy, Explainability or, in one case, uses of ML for sustainability). Then introduce your assigned reading and put it into the context of the overall topic. Use proper citations, like this one \cite{NIPS2016_6300}. See below for more information about the Bibliography.
+
+\subsection{Format Requirements}
+
+To fulfill the requirements of this seminar, each group of presenters \emph{jointly} have to submit a report of \textbf{exactly 4 pages}. This includes the title page, but not the references. Do not change the font size or margins on this template (in general, try not to change the style at all). All reports will be made available to participants of the seminar for their own consumption. Make sure to change the title of this document to the title of your talk. Note: 4 pages is not a lot of space. This does not mean, however, that the report can be written quickly or as an afterthought. Instead, try to make as much as possible of those 4 pages. Focus your thoughts and findings, condense the content of your assigned work. It is actually harder to write a good 4-pager than a longer document. Academic conferences have page limits, too, and for a good reason. (The NeurIPS conference, the flagship of machine learning, uses this very format, and limits all submissions to exactly 8 pages plus references).
+
+\begin{center}
+The deadline for report submission is \textbf{Friday, 31 May 2019, at midnight.}\\
+Please submit your report by sending an email to your mentor.
+\end{center}
+
+\section{Relevant Work}
+
+Here you should discuss your assigned works individually (if you have been assigned to read several chapters in a textbook, make separate subsections for each chapter).
+
+\subsection{Paper Nr.~1 (replace this with the title)}
+
+Discuss your first assigned paper. Outline the main idea and key results. If suitable, reproduce key mathematical insights. Ideally, also provide critical comments of your own were suitable. But make sure to clearly delineate the ideas and experiments in the assigned paper from your personal opinion or analysis.
+
+\subsection{Paper Nr.~2 (replace this with the title)}
+
+Discuss your second assigned paper. Outline the main idea and key results. If suitable, reproduce key mathematical insights. Ideally, also provide critical comments of your own were suitable. But make sure to clearly delineate the ideas and experiments in the assigned paper from your personal opinion or analysis.
+
+\subsection{Paper Nr.~3 (replace this with the title)}
+
+Discuss your third assigned paper. Outline the main idea and key results. If suitable, reproduce key mathematical insights. Ideally, also provide critical comments of your own were suitable. But make sure to clearly delineate the ideas and experiments in the assigned paper from your personal opinion or analysis.
+
+\section{Discussion}
+
+In this section you can summarize and link your assigned reading. Try to distill an overall insight from the papers, not to make a laundry list of individual results. Did you come across open questions that were not answered in the papers? Are there hidden pitfalls or problems that, in your opinion, the papers do not solve or marginalize? Provide a critical but constructive reading without being dismissive. Ideally, try to do some literature research of your own to find follow-on papers or related works. 
+
+\section{Summary}
+
+Provide a concise summary of your findings, in about 3-10 lines of text.
+
+\section{Appendix: Notes on Style and \LaTeX}
+
+This report is also an exercise in academic writing. So you should try to follow best practices, some of which are outlined in this section.
+
+\subsection{Math}
+
+Although you should not reproduce derivations of the assigned papers, key results are best presented in formal math (were applicable). \LaTeX~allows you to do so elegantly, using both inline math ($f(x)=x^2$) and display math:
+\begin{equation}
+  F = \int_a ^b f(x)\,dx.
+\end{equation}
+Equations are part of sentences, so they should come with punctuation (see above).
+
+\subsection{Figures}
+
+Figures can help make a point. But do not use them to circumvent the page requirements. If you copy and paste a graphic from someone else's work (in particular from your assigned papers), make sure to properly cite the source! Also make sure to reference the figure in the text to connect the text to the floating figure. By the way, proper nouns are capitalized in English: This paper has only one figure, shown in Figure~\ref{fig:1}.
+
+\begin{figure}
+  \centering
+  \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \caption{Example figure caption. If you take a figure from somewhere else, cite your source, for example like this (Figure copied from \cite{NIPS2016_6300})}
+  \label{fig:1}
+\end{figure}
+
+\subsection{Tables}
+
+Tables can also help summarize results. See Table~\ref{sample-table}.
+
+Note that publication-quality tables \emph{do not contain vertical rules.} We use the \verb+booktabs+ package, which allows for
+typesetting high-quality, professional tables. This package was used to typeset Table~\ref{sample-table}.
+
+\begin{table}
+  \caption{Sample table title}
+  \label{sample-table}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    \multicolumn{2}{c}{Part}                   \\
+    \cmidrule(r){1-2}
+    Name     & Description     & Size ($\mu$m) \\
+    \midrule
+    Dendrite & Input terminal  & $\sim$100     \\
+    Axon     & Output terminal & $\sim$10      \\
+    Soma     & Cell body       & up to $10^6$  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+\newpage
+\section*{References}
+
+References should be complete. That is, they include author names, title, venue, year, and ideally also page numbers, editors, etc. Note the difference between journal articles (\verb+@article+) and conference papers (\verb+@incollection+) Websites are an exception, here you are a bit more flexible in how to cite them correctly. 
+
+{\bf Remember that references do not count towards the 4-page requirement!}
+\medskip
+\small
+\bibliographystyle{abbrvnat}
+\bibliography{bibfile}
+
+
+\end{document}
