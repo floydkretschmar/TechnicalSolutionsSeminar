@@ -1,0 +1,27 @@
+PART I - HOW DATA MINING DISCRIMINATES
+-----------------------------------------------------------------
+
+target variable/class labels --->  The outcomes of interest  (target variables); target variable defines what data miners are looking for, class labels divide all possible values of the target variable into mutually exclusive categories. - subjective process, unintentionally parse the problem in a way which systematically disadvantage protected classes
+
+training data ---> Biased training data leads to discriminatory models (either: cases in which prejudice has played some role or inference from a biased sample of the population under-/overrepresenttation) 
+
+feature selection ---> what attributes are observed; serious implications for the treatment of protected classes if those factors that better account for pertinent statistical variation among members of a protected class are not well represented in the set of selected features (e.g. hiring descisions, enourmous weight to reputation of college)
+
+Proxies ---> Cases of decision making that do not artificially introduce discriminatory effects into the data mining process may nevertheless result in systematically less favorable determinations for members of protected classes; the very same criteria that correctly sort individuals according to their predicted likelihood of excelling at a job may also sort individuals according to class membership (features lassen auf class membership schließen).
+
+Masking ---> Data mining could also breathe new life into traditional forms of intentional discrimination because decision makers with prejudicial views can mask their intentions by exploiting each of the mechanisms enumerated above (bias the collection, preserve the known effects of prejudice in prior decision making).
+
+
+PART II - TITLE VII LIABILITY FOR DISCRIMINATORY DATA MINING
+--------------------------------------------------------------
+
+Civil rights act ---> Disparate treatment is one kind of unlawful discrimination in US labor law. In the United States, it means unequal behavior toward someone because of a protected characteristic (e.g. race or gender) under Title VII of the United States Civil Rights Act.  This contrasts with disparate impact, where an employer applies a neutral rule that treats everyone equally in form, but has a disadvantageous effect on some people of a protected characteristic compared to others.
+
+disparate treatment ---> Formal liability does not correspond to any particular discrimination mechanism within data mining; Because classification itself can be a legal harm, irrespective of the effect, the same should be true of using protected class as an input to a system for which the entire purpose is to build a classificatory model. The irony is that the use of protected class as an input is usually irrelevant to the outcome in terms of discriminatory effect, at least given a large enough number of input features. Either the disparate treatment occurs at the decision to apply a predictive model that will treat members of a protected class differently, or it occurs when the disparate result of the model is used in the ultimate hiring decision. In sum, aside from rational racism and masking (with some difficulties), disparate treatment doctrine does not appear to do much to regulate discriminatory data mining.
+
+disparate impact --->  
+
+
+
+PART III - THE DIFFICULTY FOR REFORMS
+---------------------------------------
