@@ -57,9 +57,11 @@
   In the abstract, summarize the topic of your report in about 5-8 lines of text. Do not cite your assigned papers here, but instead give a very concise overview over the insights you report on in this text.
 \end{abstract}
 
-\section{Introduction}
+\section{Introduction} \label{Introduction}
 
-In this section, provide a brief overview of both the general topic of your assigned work (i.e.~Fairness, Privacy, Explainability or, in one case, uses of ML for sustainability). Then introduce your assigned reading and put it into the context of the overall topic. Use proper citations, like this one \cite{Berk.2018}. See below for more information about the Bibliography.
+Description of Fairness in ML (target variable/class labels, training data, feature selection, Proxies, Masking)
+
+Defining any kind of target variable or class labels is always a very subjective process, where the presented problem could unintentionally be parsed in a way which systematically disadvantages certain classes \cite{Barocas.2016}. In addition to that, the training data could be biased by either considering cases in which prejudice has played a role or simply over- or underrepresenting a certain class \cite{Barocas.2016}. If this data gets used, it would lead to a discriminatory model. 
 
 \section{Relevant Work}
 
@@ -74,8 +76,9 @@ Discuss your first assigned paper \cite{barocas-hardt-narayanan}. Outline the ma
 Discuss your second assigned paper \cite{Berk.2018}. Outline the main idea and key results. If suitable, reproduce key mathematical insights. Ideally, also provide critical comments of your own were suitable. But make sure to clearly delineate the ideas and experiments in the assigned paper from your personal opinion or analysis.
 
 \subsection{Big Data’s Disparate Impact}
+The whitepaper "Big Data’s Disparate Impact" \cite{Barocas.2016} by Solon Barocas and Andrew D. Selbst is separated into three main parts, which deal with slightly different topics regarding fairness in machine learning, in particular data mining. The first part focuses on the various ways through which data mining can discriminitate certain classes, while the second and third part discuss the liability issue of discrimination in data mining for the american title VII of the civil rights act and the difficulty for future legal reforms.
 
-Discuss your third assigned paper \cite{Barocas.2016}. Outline the main idea and key results. If suitable, reproduce key mathematical insights. Ideally, also provide critical comments of your own were suitable. But make sure to clearly delineate the ideas and experiments in the assigned paper from your personal opinion or analysis.
+According to their studies, there are five main structures in data mining which can cause discrimination for certain classes. In particular, these are the "definition of the target variable and class labels" (I), "training data" (II), "feature selection" (III), "proxies" (IV) and "masking" (V) \cite{Barocas.2016}. All of these topics have already been clarified and described regarding their extent in section \ref{Introduction}.
 
 \subsection{Machine Bias}
 
