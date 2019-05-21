@@ -60,38 +60,30 @@
 \end{abstract}
 
 \section{Introduction}
-\input{introduction}
+\input{subsections/introduction.tex}
 \section{Relevant Work}
 
 \subsection{Fairness and machine learning: Limitations and Opportunities}
-\input{fairness_and_ml}
+\input{subsections/fairness_and_ml}
 
 \subsection{Fairness in Criminal Justice Risk Assessments: The State of the Art}
-\input{risk_assessment}
+\input{subsections/risk_assessment}
 
 \subsection{Big Data’s Disparate Impact}
-\input{big_data}
-
-In the american civil rights act, especially in title VII, there are two presented cases for discrimination, namely "disparate treatment" and "disparate impact", which also find usage in the presented whitepaper. While disparate treatment describes an uneven behavior towards a certain person due to a particular characteristic (e.g. gender, race or religion), disparate impact represents a neutral rule which treats everyone equally in form, but has a damaging effect on a subset of people with such a certain characteristic.
-
-In their whitepaper Barocas and Selbst argue that formal liability in disparate treatment doesn't correspond to any special step within data mining and that using a protected class as an input for any classificatory model should be a legal harm, because this process corresponds to the employer classifying and differentiating potential hires according to exactly this protected class \cite{Barocas.2016}. They also show that the disparate treatment either occurs at the decision to apply  a biased predictive model or when the biased result gets used for the ultimate hiring decision and draw the conclusion that the disparate treatment doctrine doesn't regulate discriminatory data mining to a satisfying extent \cite{Barocas.2016}. 
-
-While considering the disparate impact doctrine, the authors state that in such a case the plaintiff must prove that "a particular facially neutral employment practice causes a disparate impact with respect to a protected class" \cite{Barocas.2016} \cite{titleVII}.\footnote{ 42 U.S.C.§2000e-2(k)(1)(A) } In response, the defendant-employer is then allowed to justify the challanged practice by showing the job relation and business necessity.\footnote{ \textit{Id.} } The plantiff then still has the chance to show that an alternative, less discriminatory employment practice could have been used instead \cite{Barocas.2016}. For the case of data mining this means that liability regarding disparate impact can be caused by using a non job related target variable \cite{Barocas.2016}. As soon as the target variable is shown to be job related, there are two questions which need to be answered. First, whether or not the model is predictive of the trait and secondly if the model with statistical significance predicts what it is supposed to predict \cite{Barocas.2016}. Barocas and Selbst also explain that it is hard to know which features would make an existing model more or less discriminatory and therefore proving that a less discriminatory alternative would exist becomes a very hard task to solve \cite{Barocas.2016}.
-
-The presented difficulty for reform possibilities can be separated into \textit{internal} data mining issues as well as \textit{external} politicial and constitutional  constraints \cite{Barocas.2016}. 
+\input{subsections/big_data}
 
 \subsection{Machine Bias}
-\input{machine_bias}
+\input{subsections/machine_bias}
 
 \section{Discussion}
-\input{discussion}
+\input{subsections/discussion}
 
 \section{Summary}
-\input{summary}
+\input{subsections/summary}
 
 \section{Appendix: Possible Additions}
 Here we can provide all relevant additional information.
-\input{appendix}
+\input{subsections/appendix}
 
 \medskip
 \small
