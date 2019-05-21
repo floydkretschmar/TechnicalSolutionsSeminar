@@ -2,7 +2,9 @@ In the paper \enquote{Fairness in Criminal Justice Risk Assessments} \cite{Berk.
 the authors explore the concept of fairness in the technical and mathematical context. 
 More specifically they are interested to find a way, a notion of fairness can be 
 operationalized in the context of machine learning and how it applies to the specific
-case of criminal justice risk assessment. 
+case of criminal justice risk assessment. The following discussions of fairness are based 
+on the statistical framework presented in section \ref{sec:introduction}. For ease of 
+exposition the paper limits itself to the case where $Y$ and $\hat{Y}$ are binary.
 
 %Their work can be roughly subdivided into four major parts. In the first part the authors 
 %introduce the statistical framework as well as the fundamental mathematical terminology 
@@ -14,26 +16,28 @@ case of criminal justice risk assessment.
 %discussed. Finally the authors introduce a range of potential solutions to enforce fairness
 %in machine learning algorithms.
 
-The discussions in \cite{Berk.2018} are based on the statistical framework presented in section 
-\ref{sec:introduction}. For ease of exposition the paper limits itself to the case where $Y$ and 
-$\hat{Y}$ are binary. The authors define fairness based on the accuracy measurements defined 
-by the confusion matrix\footnote{A full explanation of the confusion matrix can be found in 
-section \ref{sec:appendix}}. More specifically they define fairness as an equality of accuracy 
-across all protected group categories. Imposing this equality constraint for each kind of accuracy
-defined by the confusion matrix, leads to the following definitions of fairness: 
+In the first parts of the paper, the underlying statistical framework is defined. The 
+fairness definitions proposed are based on the accuracy measurements defined by the 
+confusion matrix \footnote{A full explanation of the confusion matrix can be found in 
+section \ref{sec:appendix}}. More specifically the authors define fairness as an equality 
+of accuracy across all protected group categories. Imposing this equality constraint for 
+each kind of accuracy defined by the confusion matrix, leads to the following definitions 
+of fairness: 
 
 \begin{enumerate}
     \item \textbf{Overall accuracy equality:} equal probability of correct classification 
     $\frac{t_p + t_n}{N}$ 
     \item \textbf{Statistical parity:} equal probability of predicting failure/success 
     $\frac{t_p + f_p}{N}$ or $\frac{t_n + f_n}{N}$
-    \item \textbf{Conditional procedure accuracy equality:} equal probability of correct classification, given 
-    the actual outcome: $\frac{t_p}{t_p + f_n}$ or $\frac{t_n}{t_n + f_p}$
-    \item \textbf{Conditional use accuracy equality:} equal probability of an actual outcome, given the 
-    prediction: $\frac{t_p}{t_p + f_p}$ or $\frac{t_n}{t_n + f_n}$
-    \item \textbf{Treatment equality:} equal ratio between false negatives and positives: $\frac{f_p}{f_n}$ and 
-    $\frac{f_n}{f_p}$
-    \item \textbf{Total fairness:} All previously notions of fairness are achieved simultaneously
+    \item \textbf{Conditional procedure accuracy equality:} equal probability of correct 
+    classification, given the actual outcome: $\frac{t_p}{t_p + f_n}$ or 
+    $\frac{t_n}{t_n + f_p}$
+    \item \textbf{Conditional use accuracy equality:} equal probability of an actual 
+    outcome, given the prediction: $\frac{t_p}{t_p + f_p}$ or $\frac{t_n}{t_n + f_n}$
+    \item \textbf{Treatment equality:} equal ratio between false negatives and positives: 
+    $\frac{f_p}{f_n}$ and $\frac{f_n}{f_p}$
+    \item \textbf{Total fairness:} All previously notions of fairness are achieved 
+    simultaneously
 \end{enumerate}
 
 %\begin{itemize}
@@ -50,3 +54,23 @@ defined by the confusion matrix, leads to the following definitions of fairness:
 %    \item \textbf{Cost Ratio:} ratio between false negatives and positives: $\frac{f_p}{f_n}$ and 
 %    $\frac{f_n}{f_p}$
 %\end{itemize}
+
+For the discussion of fairness it is assumed that $f(L,S) = \hat{f}(L,S)$ as to no 
+conflate discussions about fairness and accuracy. But the notions about accuracy discussed 
+in section \ref{sec:introduction} also hold true for the probabilities defined by the 
+confusion matrix of $Y$ and $\hat{Y}$. \\
+
+Following these definitions is a discussion of necessary tradeoffs between accuracy and 
+fairness as well as between different kind of fairness. The paper states that \enquote{
+\dots excluding $S$ will reduce accuracy. Any procedure that even just discounts the role 
+of $S$ will lead to less accuracy.}\cite{Berk.2018} \\
+The authors also explore the conflict between conditional use and procedure accuracy equality
+by citing the impossibility theorem \enquote{When the base rates\footnote{proportion of actual failures/successes 
+$\frac{t_p + f_n}{N}$ or $\frac{t_n + f_p}{N}$} differ by protected group and when there 
+is not separation\footnote{separation = \enquote{perfectly accurate classification is 
+possible}\cite{Berk.2018}}, one cannot have both conditional use accuracy and equality in 
+the false negative and false positive rates.}\cite{DBLP:journals/corr/KleinbergMR16}
+\cite{Chouldechova2017FairPW}. The authors suggest, that \enquote{the key tradeoff will be between
+the false positive and false negative rates on the one hand and the conditional use accuracy
+on the other.}\cite{Berk.2018}\\
+
