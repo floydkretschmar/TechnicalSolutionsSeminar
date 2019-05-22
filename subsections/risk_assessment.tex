@@ -18,7 +18,7 @@ exposition the paper limits itself to the case where $Y$ and $\hat{Y}$ are binar
 
 In the first parts of the paper, the underlying statistical framework is defined. The 
 fairness definitions proposed are based on the accuracy measurements defined by the 
-confusion matrix \footnote{A full explanation of the confusion matrix can be found in 
+confusion matrix \footnote{ A full explanation of the confusion matrix can be found in 
 section \ref{sec:appendix}}. More specifically the authors define fairness as an equality 
 of accuracy across all protected group categories. Imposing this equality constraint for 
 each kind of accuracy defined by the confusion matrix, leads to the following definitions 
@@ -57,27 +57,26 @@ of fairness:
 
 For the discussion of fairness it is assumed that $f(L,S) = \hat{f}(L,S)$ as to no 
 conflate discussions about fairness and accuracy. But the notions about accuracy discussed 
-in section \ref{sec:introduction} also hold true for the probabilities defined by the 
-confusion matrix of $Y$ and $\hat{Y}$. \\
+in section \ref{sec:introduction} also hold true for the probabilities defined by the
+confusion matrix of $Y$ and $\hat{Y}$. 
 
 In the next part follows a discussion of necessary tradeoffs between accuracy and 
 fairness as well as between different kind of fairness. The paper states that \enquote{
 \dots excluding $S$ will reduce accuracy. Any procedure that even just discounts the role 
 of $S$ will lead to less accuracy.}\cite{Berk.2018} The authors also explore the conflict 
 between conditional use and procedure accuracy equality by citing the following impossibility 
-theorem: \enquote{When the base rates\footnote{proportion of actual failures/successes 
+theorem: \enquote{When the base rates\footnote{ proportion of actual failures/successes 
 $\frac{t_p + f_n}{N}$ or $\frac{t_n + f_p}{N}$} differ by protected group and when there 
-is not separation\footnote{separation = \enquote{perfectly accurate classification is 
+is not separation\footnote{ separation = \enquote{perfectly accurate classification is
 possible}\cite{Berk.2018}}, one cannot have both conditional use accuracy and equality in 
 the false negative and false positive rates.}\cite{DBLP:journals/corr/KleinbergMR16}
 \cite{Chouldechova2017FairPW}. The authors suggest, that \enquote{the key tradeoff will be 
 between the false positive and false negative rates on the one hand and the conditional use 
-accuracy on the other.}\cite{Berk.2018}\\
+accuracy on the other.}\cite{Berk.2018}
 
 In the final parts of the paper multiple approaches for solving the issue of fairness in 
 machine learning are introduced and briefly discussed. The paper explores three different
 main strategies, which can be combined.
-
 \begin{enumerate}
     \item \textbf{Pre-Processing} is the elimination of sources of unfairness in the data before 
     formulating $h(L,S)$. Examples include the removal of linear dependencies between $L$ and

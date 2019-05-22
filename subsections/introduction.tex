@@ -1,13 +1,9 @@
 \label{sec:introduction}
-
-Description of Fairness in ML (target variable/class labels, training data, feature selection, 
-Proxies, Masking)
-
-Defining any kind of target variable or class labels is always a very subjective process, where 
+In the context of machine learning defining any kind of target variable (outcome of interest) or class labels is always a very subjective process, where 
 the presented problem could unintentionally be parsed in a way which systematically disadvantages 
 certain classes \cite{Barocas.2016}. In addition to that, the training data could be biased by 
 either considering cases in which prejudice has played a role or simply over- or underrepresenting 
-a certain class \cite{Barocas.2016}. If this data gets used, it would lead to a discriminatory model. 
+a certain class \cite{Barocas.2016}. If such data gets used, it would lead to a discriminatory model, which would have a unadvantageous impact on certain subgroup of people. (include feature selection, proxies, masking here)
 
 As the statistical framework to describe the process of machine learning \cite{Berk.2018} 
 proposes the idea of a population with a limitless number of I.I.D observations that are 
@@ -20,4 +16,4 @@ source of the predictions $\hat{Y}$. The procedure $h(L,S)$ can either be seen a
 approximating the true response surface, resulting in a $\hat{f}(L,S)$ that will be a biased 
 estimator for $f(L,S)$. If the estimation target of $h(L,S)$ is instead acknowledged to be 
 an approximation of the true response surface, this approximation can be estimated by 
-$\hat{f}(L,S)$ in an asymptotically unbiased manner. 
+$\hat{f}(L,S)$ in an asymptotically unbiased manner.
