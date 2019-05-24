@@ -5,12 +5,8 @@ certain classes \cite{Barocas.2016, barocas-hardt-narayanan}. Moreover, the trai
 either considering cases in which prejudice has played a role or simply over- or underrepresenting 
 a certain class \cite{Barocas.2016, barocas-hardt-narayanan}. If such data gets used, it would lead to a discriminatory model, which would have a unadvantageous impact on a certain subgroup of people. This process can get enhanced through disadvantageous feature selection, proxies (relevant features correlate to class membership) or masking, which allows decision maskers to mask their prejudicial views by using any of the previously mentioned approaches \cite{Barocas.2016, barocas-hardt-narayanan}.  
 
-[Placeholder for transition]
-
-As the statistical framework to describe the process of machine learning \cite{Berk.2018} 
-proposes the idea of a population with a limitless number of I.I.D observations that are 
-sampled from a single joint probability distribution $P(Y,L,S)$. 
-$Y$ is the outcome of interest, $L$ represent the legitimate predictors and $S$ are the 
+For the remainder of this paper we want to introduce the statistical framework introduced in \cite{Berk.2018} to describe the process of machine learning. Here Berk et al. propose the idea of a population with a limitless number of i.i.d observations that are sampled from a single joint probability distribution $P(Y,L,S)$. 
+The variable $Y$ is the outcome of interest, $L$ represent the legitimate predictors and $S$ are the 
 protected predictors like race or gender. In this population there exists a function $f(L,S)$ 
 linking the predictors $L,S$ to the expectation of $Y$. When a fitting procedure $h(L,S)$ 
 is applied to the data, it produces a so called hypothesis $\hat{f}(L,S)$ which is the 
