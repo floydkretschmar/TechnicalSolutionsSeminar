@@ -11,12 +11,12 @@ the target variable and class labels" (I), "training data" (II), "feature select
 been clarified and described regarding their extent in section \ref{sec:introduction} and 
 therefore won't need special attention here.
 
-In the american civil rights act, especially in title VII, there are two presented cases 
-for discrimination, namely "disparate treatment" and "disparate impact", which also find 
+In the american civil rights act, especially in title VII, there are two presented notions 
+for unfairness, namely "disparate treatment" and "disparate impact", which also find 
 usage in the presented whitepaper. While disparate treatment describes an uneven behavior 
-towards a certain person due to a particular characteristic (e.g. gender, race or 
+towards a certain person due to a senesitive characteristic (e.g. gender, race or 
 religion), disparate impact represents a neutral rule which treats everyone equally in 
-form, but has a damaging effect on a subset of people with such a certain characteristic \cite{titleVII}.
+form, but has a damaging effect on a subset of people with such a certain characteristic \cite{isabel02, isabel01}.
 
 In their whitepaper Barocas and Selbst argue that formal liability in disparate treatment 
 doesn't correspond to any special step within data mining and that using a protected 
@@ -30,8 +30,7 @@ data mining to a satisfying extent \cite{Barocas.2016}.
 
 While considering the disparate impact doctrine, the authors state that in such a case 
 the plaintiff must prove that "a particular facially neutral employment practice causes 
-a disparate impact with respect to a protected class" \cite{Barocas.2016} 
-\cite{titleVII}.\footnote{ 42 U.S.C.§2000e-2(k)(1)(A) } In response, the defendant-employer 
+a disparate impact with respect to a protected class" \cite{Barocas.2016, titleVII}.\footnote{ 42 U.S.C.§2000e-2(k)(1)(A) } In response, the defendant-employer 
 is then allowed to justify the challanged practice by showing the job relation and 
 business necessity.\footnote{ \textit{Id.} } The plantiff then still has the chance 
 to show that an alternative, less discriminatory employment practice could have been 
@@ -45,5 +44,5 @@ also explain that it is hard to know which features would make an existing model
 or less discriminatory and therefore proving that a less discriminatory alternative 
 would exist becomes a very hard task to solve \cite{Barocas.2016}.
 
-The presented \textit{internal} issues with data mining are fundamental questions that need to be addressed or can't be solved properly. For example, the target variable will always inherent certain kinds of biases, because a target variable must contain judgments about what is really important in the presented problem \cite{Barocas.2016}. Additionally, a solution to the issues with training data labeling need to compromise between forbidding employers from using past discrimination and allowing them to use historical data of good employees \cite{Barocas.2016}. For skewed data sets the employer needs to recognize the type of bias, have access to the underlying data and needs the possibility to collect more data  \cite{Barocas.2016}. Otherwise, oversampling underrepresented communities can clear up some of the bias \cite{Barocas.2016}. Statistical discrimination in the area of feature selection is avoidable if there is the possibility to gather additional or more granular data \cite{Barocas.2016}. Otherwise minimizing the error rate between groups can help to improve this aspect \cite{Barocas.2016}. Lastly, for proxies there needs to be a threshold which defines when a correlation between an attribute and class membership becomes worrisome, as well as when it is sufficiently relevant despite being highly correlated to class membership \cite{Barocas.2016}.
+The presented \textit{internal} issues with data mining are fundamental questions that need to be addressed or can't be solved properly. For example, the target variable will always inherent certain kinds of biases, because a target variable must contain judgments about what is really important in the presented problem \cite{Barocas.2016}. Additionally, a solution to the issues with training data labeling need to compromise between forbidding employers from using past discrimination and allowing them to use historical data of good employees \cite{Barocas.2016}. For skewed data sets the employer needs to recognize the type of bias, have access to the underlying data and needs the possibility to collect more data  \cite{Barocas.2016}. Otherwise, oversampling underrepresented communities can clear up some of the bias \cite{Barocas.2016}. Statistical discrimination in the area of feature selection is avoidable if there is the possibility to gather additional or more granular data \cite{Barocas.2016}. Otherwise minimizing the error rate between groups can help to improve this aspect \cite{Barocas.2016}. Lastly, for proxies there needs to be a threshold which defines when a correlation between an attribute and class membership becomes alarming, as well as when it is sufficiently relevant to use it despite being highly correlated to class membership \cite{Barocas.2016}.
 

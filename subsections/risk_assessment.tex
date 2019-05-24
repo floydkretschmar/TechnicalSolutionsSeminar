@@ -1,6 +1,6 @@
 In the paper \enquote{Fairness in Criminal Justice Risk Assessments} \cite{Berk.2018} 
 the authors explore the concept of fairness in the technical and mathematical context. 
-More specifically they are interested to find a way, a notion of fairness can be 
+More specifically, they are interested to find a way, a notion of fairness can be 
 operationalized in the context of machine learning and how it applies to the specific
 case of criminal justice risk assessment. The following discussions of fairness are based 
 on the statistical framework presented in section \ref{sec:introduction}. For ease of 
@@ -18,8 +18,8 @@ exposition the paper limits itself to the case where $Y$ and $\hat{Y}$ are binar
 
 In the first parts of the paper, the underlying statistical framework is defined. The 
 fairness definitions proposed are based on the accuracy measurements defined by the 
-confusion matrix \footnote{ A full explanation of the confusion matrix can be found in 
-section \ref{sec:appendix}}. More specifically the authors define fairness as an equality 
+confusion matrix\footnote{ A full explanation of the confusion matrix can be found in 
+section \ref{sec:appendix}}. More specifically, the authors define fairness as an equality 
 of accuracy across all protected group categories. Imposing this equality constraint for 
 each kind of accuracy defined by the confusion matrix, leads to the following definitions 
 of fairness: 
@@ -62,17 +62,16 @@ confusion matrix of $Y$ and $\hat{Y}$.
 
 In the next part follows a discussion of necessary tradeoffs between accuracy and 
 fairness as well as between different kind of fairness. The paper states that \enquote{
-\dots excluding $S$ will reduce accuracy. Any procedure that even just discounts the role 
-of $S$ will lead to less accuracy.}\cite{Berk.2018} The authors also explore the conflict 
+[...] excluding $S$ will reduce accuracy. Any procedure that even just discounts the role 
+of $S$ will lead to less accuracy.} \cite{Berk.2018}. The authors also explore the conflict 
 between conditional use and procedure accuracy equality by citing the following impossibility 
 theorem: \enquote{When the base rates\footnote{ proportion of actual failures/successes 
 $\frac{t_p + f_n}{N}$ or $\frac{t_n + f_p}{N}$} differ by protected group and when there 
 is not separation\footnote{ separation = \enquote{perfectly accurate classification is
-possible}\cite{Berk.2018}}, one cannot have both conditional use accuracy and equality in 
-the false negative and false positive rates.}\cite{DBLP:journals/corr/KleinbergMR16}
-\cite{Chouldechova2017FairPW}. The authors suggest, that \enquote{the key tradeoff will be 
+possible} \cite{Berk.2018}}, one cannot have both conditional use accuracy and equality in 
+the false negative and false positive rates.} \cite{Chouldechova2017FairPW, DBLP:journals/corr/KleinbergMR16}. The authors suggest, that \enquote{the key tradeoff will be 
 between the false positive and false negative rates on the one hand and the conditional use 
-accuracy on the other.}\cite{Berk.2018}
+accuracy on the other.} \cite{Berk.2018}.
 
 In the final parts of the paper multiple approaches for solving the issue of fairness in 
 machine learning are introduced and briefly discussed. The paper explores three different
@@ -93,6 +92,6 @@ main strategies, which can be combined.
 \end{enumerate}
 
 The authors note, that all the corrections for fairness presented are themselves agnostic 
-about \enquote{what the target outcome for fairness should be.}\cite{Berk.2018} They 
+about \enquote{what the target outcome for fairness should be.} \cite{Berk.2018}. They 
 argue that a discussion about the benchmark according to which equality is achieved, is just as
 important, as it makes the determination of tradeoffs more complicated.
