@@ -1,12 +1,13 @@
-The rise of machine learning in today's society through automated, data-powered decision making systems in various application fields with high impact raised increasing attention regarding the possible inherited discrimination for people with sensitive characteristics (e.g. gender, race or religion) through the commonly used machine learning techniques.
-In this context, defining any kind of target variable (outcome of interest) or multiple class labels is always a very subjective process, where 
-the presented problem could unintentionally be parsed in a way which systematically disadvantages 
-certain classes \cite{Barocas.2016, barocas-hardt-narayanan}. Moreover, the training data could be biased by 
-either considering cases in which prejudice has played a role or simply over- or underrepresenting 
-a certain class \cite{Barocas.2016, barocas-hardt-narayanan}. If such data gets used, it would lead to a discriminatory model, which would have a unadvantageous impact on a certain subgroup of people. This process can get enhanced through disadvantageous feature selection, proxies (non sensitive features correlate to class membership) or masking, which allows decision maskers to mask their prejudicial views by using any of the previously mentioned approaches \cite{Barocas.2016, barocas-hardt-narayanan}. All of these problems introduce a lot of legal issues which are yet to be solved. 
+The rise of machine learning in today's society through automated, data-powered decision making 
+systems in various application fields with high impact raised increasing attention regarding the 
+possible inherited discrimination for people with sensitive characteristics (e.g. gender, race or 
+religion) through the commonly used machine learning techniques.
 
-For the remainder of this paper we want to introduce the statistical framework presented in \cite{Berk.2018} to describe the process of machine learning. Here Berk et al. propose the idea of a population with a limitless number of i.i.d observations that are sampled from a single joint probability distribution $P(Y,L,S)$. 
-The variable $Y$ is the outcome of interest, $L$ represent the legitimate predictors and $S$ are the 
+For the remainder of this paper we will use the statistical framework introduced in 
+\cite{Berk.2018} to describe the process of machine learning. Here Berk et al. propose the idea of 
+a population with a limitless number of i.i.d observations that are sampled from a single joint 
+probability distribution $P(Y,L,S)$. 
+The target variable $Y$ is the outcome of interest, $L$ represent the legitimate predictors and $S$ are the 
 protected predictors like race or gender. In this population there exists a function $f(L,S)$ 
 linking the predictors $L,S$ to the expectation of $Y$. When a fitting procedure $h(L,S)$ 
 is applied to the data, it produces a so called hypothesis $\hat{f}(L,S)$ which is the 
@@ -15,3 +16,15 @@ approximating the true response surface, resulting in a $\hat{f}(L,S)$ that will
 estimator for $f(L,S)$. If the estimation target of $h(L,S)$ is instead acknowledged to be 
 an approximation of the true response surface, this approximation can be estimated by 
 $\hat{f}(L,S)$ in an asymptotically unbiased manner.
+
+In this context, defining any kind of target variable (outcome of interest) or multiple class labels 
+is always a very subjective process, where the presented problem could unintentionally be parsed in a 
+way which systematically disadvantages certain classes \cite{Barocas.2016, barocas-hardt-narayanan}. 
+Moreover, the training data could be biased by either considering cases in which prejudice has played 
+a role or simply over- or underrepresenting a certain class \cite{Barocas.2016, barocas-hardt-narayanan}. 
+If such data gets used, it would lead to a discriminatory model, which would have a disadvantageous 
+impact on a certain subgroup of people. This process can get enhanced through disadvantageous feature 
+selection, proxies (non sensitive features correlate to class membership) or masking, which allows 
+decision maskers to mask their prejudicial views by using any of the previously mentioned approaches 
+\cite{Barocas.2016, barocas-hardt-narayanan}. All of these problems introduce a lot of legal issues 
+which are yet to be solved. 
