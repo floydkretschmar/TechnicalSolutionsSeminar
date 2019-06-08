@@ -1,8 +1,11 @@
 \label{sec:appendix}
 
-\begin{center}
-    \begin{tabular}{ |c|c|c|c| } 
-    \hline
+\begin{table}[h]
+    \caption{Confusion Matrix}
+    \label{tab:confusion}
+    \centering
+    \begin{tabular}{ c|c|c|c } 
+    \toprule
       & \thead{$\hat{Y}_f$ \\ Failure predicted} & \thead{$\hat{Y}_s$ \\ Success Predicted} & \thead{Conditional Procedure \\ Accuracy} \\ 
     \hline
     \thead{$Y_f$ \\ Failure - A Positive} & \makecell{$t_p$ \\ true positive} & \makecell{$f_n$ \\ false negative} & \makecell{$\frac{t_p}{t_p + f_n}$ \\ True Positive Rate} \\ 
@@ -10,10 +13,9 @@
     \thead{$Y_s$ \\ Success - A Negative} & $f_p$: false positive & $t_n$: true negative & \makecell{$\frac{t_n}{t_n + f_p}$ \\ True Negative Rate } \\ 
     \hline
     \thead{Conditional \\ Use Accuracy} & $\frac{t_p}{t_p + f_p}$ & $\frac{t_n}{t_n + f_n}$ & $\frac{t_p + t_n}{t_p + f_p + t_n + f_n}$ \\ 
-    \hline
+    \bottomrule
     \end{tabular}
-    \label{tab:confusion}
-\end{center}
+\end{table}
 
 \begin{itemize}
     \item \textbf{Sample Size:} $N = t_p + f_p + t_n + f_n$
