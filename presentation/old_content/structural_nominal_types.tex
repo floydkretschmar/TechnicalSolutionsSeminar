@@ -1,0 +1,103 @@
+\begin{frame}[fragile]{Anonyme innere Klassen}{Nachteile}
+
+    \centering
+    \begin{minipage}[b]{0.75\textwidth}
+        \begin{block}{Instanziierung eines ActionListeners \citep{goetz13}}
+            \begin{lstlisting}
+button.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+        ui.dazzle(e.getModifiers());
+    }
+});
+            \end{lstlisting}
+        \end{block}
+    \end{minipage}
+
+    \pause
+
+    \begin{itemize}
+        \item<2->Unhandliche Syntax
+        \item<3->Handhabung von \texttt{this} und anderen Bezeichnern
+        \item<4->Semantik des Klassenladens und der Objektinstanziierung
+        \item<5->Verwendung von lokalen non-\texttt{final} Variablen nicht möglich
+        \item<6->Kontrollfluss ist nicht leicht zu abstrahieren
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Anonyme innere Klassen}{Vorteile}
+
+    \begin{center}
+    \begin{minipage}[b]{0.75\textwidth}
+        \begin{block}{Instanziierung eines ActionListeners \citep{goetz13}}
+            \begin{lstlisting}
+button.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+        ui.dazzle(e.getModifiers());
+    }
+});
+            \end{lstlisting}
+        \end{block}
+    \end{minipage}
+    \end{center}
+
+    \pause
+
+    Ein Interface \dots
+    \begin{itemize}
+        \item<2->\textcolor<5->{dkred!70}{ist bereits ein elementarer Bestandteil des Typ-Systems}
+        \only<5->{\\ $\rightarrow$ \textbf{Beispiel für nominale Typisierung}}
+        \item<3->hat eine definierte Repräsentation zur Laufzeit 
+        \item<4->kodifiziert eine informelle Vereinbarungen, ausgedrückt durch
+        seine Javadoc-Kommentare
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Strukturelle vs. nominale Typisierung}
+    
+    \centering
+    \begin{minipage}[b]{0.75\textwidth}
+        \begin{block}{Vergleich von Typisierungsarten \citep{kyle16}}
+            \begin{lstlisting}
+class Foo {
+    method(input: string): number { ... }
+}
+class Bar {
+    method(input: string): %\only<1-3>{number}\only<4->{\textcolor{dkred!70}{boolean}}% { ... }
+}
+
+let foo: Foo = new Bar();
+            \end{lstlisting}
+        \end{block}
+    \end{minipage}
+    
+    \linespread{1.6}
+
+    \begin{itemize}
+        \item<1-> Ist diese Zuordnung gültig?
+        \item<2-> \textbf{Nominale Typisierung:} Nein, denn \texttt{Foo} $\neq$ \texttt{Bar}
+        \item<3-> \textbf{Strukturelle Typisierung:} \only<3>{Ja}\only<4>{\textcolor{dkred!70}{Nein}}, 
+        denn \texttt{Foo} und \texttt{Bar} haben\only<4>{ nicht} die selbe Struktur
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Struktureller Funktionstyp als Alternative?}
+
+    \centering
+    \begin{minipage}[b]{0.75\textwidth}
+        \begin{block}{Funktion \enquote{String und Object nach Integer} \citep{goetz13}}
+            \begin{lstlisting}
+(String, object)->int
+            \end{lstlisting}
+        \end{block}
+    \end{minipage}
+
+    \begin{itemize}
+        \item<2-> stärkere Vermischung von strukturellen und nominalen Datentypen in Java
+        \item<3-> Aufsplittung einheitlicher Bibliotheksstandards in zwei unvereinbare Formate 
+        \item<4-> unhandliche Syntax (insbesondere im Bezug auf Exception-Behandlung)
+        \item<5-> keine verschiedenen Laufzeitrepräsentationen für jede einzelne Funktion 
+        \\$\rightarrow$ \enquote{type erasure}
+    \end{itemize}
+\end{frame}

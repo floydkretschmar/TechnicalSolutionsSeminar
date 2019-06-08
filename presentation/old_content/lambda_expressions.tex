@@ -1,0 +1,79 @@
+\begin{frame}[fragile]{Lambda-Ausdrücke}{Funktions-Interfaces}
+
+    \centering
+    \begin{minipage}[b]{0.75\textwidth}
+        \begin{block}{\citet{goetz13}}
+            \enquote{So, we have instead followed the path of \textbf{"use what you know"} -- since existing libraries use functional interfaces
+            extensively, we codify and leverage this pattern.}
+        \end{block}
+    \end{minipage}
+
+    \begin{itemize}
+        \item<2-> \textbf{functional interfaces}: Interfaces mit genau einer Methode
+        \item<3-> \texttt{@FunctionalInterface}-Annotation kann verwendet werden um 
+        Designintention zu verdeutlichen
+        \item<4-> Eine Vielzahl vordefinierter Interfaces dieser Art existieren in Java-8:\\
+        \texttt{Consumer<T>}, \texttt{Function<T,R>}, \texttt{UnaryOperator<T>}, \dots
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Anonyme innere Klassen}{Nachteile}
+    \begin{center}
+        \begin{minipage}[b]{0.75\textwidth}
+            \begin{block}{Instanziierung eines ActionListeners \citep{goetz13}}
+                \begin{onlyenv}<1>
+                    \begin{lstlisting}
+button.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+        ui.dazzle(e.getModifiers());
+    }
+});
+                    \end{lstlisting}
+                \end{onlyenv}
+                \begin{onlyenv}<2->
+                    \begin{lstlisting}
+button.addActionListener(
+    %\textcolor{dkred!70}{e -> ui.dazzle(e.getModifiers())}%
+);
+                    \end{lstlisting}
+                \end{onlyenv}
+            \end{block}
+        \end{minipage}
+    \end{center}
+
+    \begin{itemize}
+        \item \textcolor<3->{dkgreen!70}{Unhandliche Syntax}
+        \item \textcolor<4->{dkgreen!70}{Semantik des Klassenladens und der Objektinstanziierung}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Lambda-Ausdrücke}{Alternative Syntax für anonyme Klassen}
+
+    \begin{center}
+        \begin{minipage}[b]{0.75\textwidth}
+            \begin{block}{Allgemeine Form eines Lambda-Ausdrucks \citep{goetz13}}
+                \begin{lstlisting}
+(argument1, argument2, ..., argumentN) -> 
+{
+    ... 
+    return ... ;
+}
+                \end{lstlisting}
+            \end{block}
+        \end{minipage}
+    \end{center}
+    
+    \begin{itemize}
+        \item<2->\textbf{Parameterliste:} Klammern bei weniger als 2 Elementen optional
+        \item<3->\textbf{Körper:} 
+        \begin{itemize}
+            \item<3-> \texttt{break} und \texttt{continue} sind auf oberster Ebene verboten
+            \item<4-> jeder Pfad musst etwas zurückgeben oder eine Exception werfen
+            \item<5-> bei einzeiligem Körper sind Klammern und \texttt{return} optional
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
