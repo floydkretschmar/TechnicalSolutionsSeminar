@@ -1,0 +1,111 @@
+\documentclass[9pt, t]{beamer}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\usepackage[sfdefault]{roboto}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\usepackage{styles/fluxmacros}
+\usefolder{styles}
+% Styles: asphalt, blue, red, green, gray 
+\usetheme[style=gray]{flux}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Zusatzpakete
+% Havard zitier stil
+\usepackage[round]{natbib}
+% zeilenabstand
+\usepackage{setspace}
+% mehr zitate
+\usepackage{csquotes}
+% spacing of enum items
+\usepackage{enumitem}
+\setitemize{label=\usebeamerfont*{itemize item}%
+\usebeamercolor[fg]{itemize item}
+\usebeamertemplate{itemize item},
+itemsep=1.3em}
+% Codeanzeige
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{dkyellow}{rgb}{0.6,0.6,0}
+\definecolor{dkblue}{rgb}{0,0,0.6}
+\definecolor{dkred}{rgb}{0.6,0,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+
+\lstset{frame=none,
+  language=Java,
+  aboveskip=0mm,
+  belowskip=0mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{dkblue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{dkgreen},
+  breaklines=true,
+  breakatwhitespace=true,
+  numberbychapter=false,
+  tabsize=3,
+  escapechar=\%
+}
+
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{ragged2e}
+\usepackage{schemabloc}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Information
+\title{Lambdas in Java-8}
+\subtitle{Floyd Kretschmar}
+\institute{\includegraphics[width=0.45\textwidth]{assets/uni_logo_dark.png}}
+\date{\today}
+\titlegraphic{assets/uni_logo.png}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+\begin{document}
+
+\titlepage
+
+\begin{frame}
+ \frametitle{Inhaltsverzeichnis}
+ \tableofcontents[pausesections]
+
+\end{frame}
+
+\section{Hintergrund und Geschichte}
+\subsection{Motivation}
+\include{parts/background_history}
+
+\subsection{Strukturelle vs. nominale Typisierung}
+\include{parts/structural_nominal_types}
+
+\section{Lambda-Ausdrücke}
+\subsection{Grundlagen}
+\include{parts/lambda_expressions}
+\subsection{Typ-Inferenz und Zieltypisierung}
+\include{parts/type_inference}
+\subsection{Variablen und ihre Gültigkeitsbereiche}
+\include{parts/scoping_variable_capture}
+\subsection{Referenzierung von Methoden}
+\include{parts/method_refrences}
+
+\section{Standard- und statische Methoden für Interfaces}
+\include{parts/default_and_static}
+
+\section{Zusammenfassung}
+\include{parts/conclusion}
+
+\end{document}

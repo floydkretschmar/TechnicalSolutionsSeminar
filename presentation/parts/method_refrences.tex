@@ -1,0 +1,190 @@
+\begin{frame}[fragile]{Referenzierung von Methoden}
+
+    \begin{itemize}
+        \item<1-> Lambda-Ausdrücke vereinfachen die anonyme Instanziierung von funktionalen 
+        Interfaces
+        \item<2-> \textbf{Ziel:} definiere vereinfachte Form um bereits existierende 
+        Methoden zu referenzieren 
+    \end{itemize}
+    
+    \pause
+
+    \begin{center}
+        \begin{minipage}[b]{0.75\textwidth}
+            \begin{block}{Methoden-Referenzen \citep{goetz13}}
+                \begin{lstlisting}
+Comparator<Person> byName 
+    = Comparator.comparing(%\only<2>{p -> p.getName()}\only<3->{\textcolor{dkred!70}{Person::getName}}%);
+Arrays.sort(people, byName);
+                \end{lstlisting}
+            \end{block}
+        \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Methoden-Referenzen}{Parametertypen}
+    \begin{itemize}
+        \item<1-> Parametertypen der Methode des funktionalen Interfaces fungieren als Argumente
+        eines impliziten Methodenaufrufs
+        \item<2-> Manipulation der Parametertypen durch widening, boxing, etc. erlaubt
+    \end{itemize}
+
+    \pause
+
+    \begin{center}
+        \begin{minipage}[b]{0.75\textwidth}
+            \begin{block}{Methoden-Referenzen \citep{goetz13}}
+                \begin{lstlisting}
+// void exit(int status)
+Consumer<Integer> b1 = System::exit;
+// void sort(Object[] a)
+Consumer<String[]> b2 = Arrays::sort;  
+// void main(String... args) 
+Consumer<String> b3 = MyProgram::main;  
+// void main(String... args)
+Runnable r = MyProgram::main;           
+                \end{lstlisting}
+            \end{block}
+        \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Methoden-Referenzen}{Methoden-Typen}
+    \only<1>{Unterschiedliche Methoden-Typen werden auf verschiedene Arten referenziert:}
+
+    \begin{onlyenv}<2->
+        \begin{center}
+            \begin{minipage}[b]{0.75\textwidth}
+                \begin{block}{Statische Methode \citep{goetz13}}
+                    \begin{lstlisting}
+KlassenName::methodenName
+                    \end{lstlisting}
+                \end{block}
+            \end{minipage}
+        \end{center}
+
+        \begin{itemize}
+            \item Klassenbezeichner steht vor dem Trennzeichen.
+        \end{itemize}
+    \end{onlyenv}
+
+    \begin{onlyenv}<3->
+        \begin{center}
+            \begin{minipage}[b]{0.75\textwidth}
+                \begin{block}{\texttt{super}-Methode \citep{goetz13}}
+                    \begin{lstlisting}
+super::methodenName
+                    \end{lstlisting}
+                \end{block}
+            \end{minipage}
+        \end{center}
+
+        \begin{itemize}
+            \item \texttt{super}-Schlüsselwort steht vor dem Trennzeichen
+        \end{itemize}
+    \end{onlyenv}
+\end{frame}
+
+\begin{frame}[fragile]{Methoden-Referenzen}{Methoden-Typen}
+    \begin{center}
+        \begin{minipage}[b]{0.75\textwidth}
+            \begin{onlyenv}<1-2>
+                \begin{block}{Methode eines bestimmten Objekts \citep{goetz13}}
+                    \begin{lstlisting}
+objektName::methodenName
+                    \end{lstlisting}
+                \end{block}
+            \end{onlyenv}
+            \begin{onlyenv}<3-5>
+                \begin{block}{Methode eines beliebigen Objekts \citep{goetz13}}
+                    \begin{lstlisting}
+KlassenName::methodenName
+                    \end{lstlisting}
+                \end{block}
+            \end{onlyenv}
+            \begin{onlyenv}<6-7>
+                \begin{block}{Klassen-Konstruktor \citep{goetz13}}
+                    \begin{lstlisting}
+KlassenName::new
+                    \end{lstlisting}
+                \end{block}
+            \end{onlyenv}
+            \begin{onlyenv}<8->
+                \begin{block}{Array-Konstruktor \citep{goetz13}}
+                    \begin{lstlisting}
+TypeName[]::new
+                    \end{lstlisting}
+                \end{block}
+            \end{onlyenv}
+
+        \end{minipage}
+    \end{center}
+
+    \begin{onlyenv}<1-2>
+        \begin{itemize}
+            \item<1-> Objektbezeichner steht vor dem Trennzeichen.
+            \item<2-> bietet bequeme Art um zwischen verschiedenen funktionalen Interfaces zu konvertieren:
+        \end{itemize}
+
+        \begin{onlyenv}<2>
+            \begin{center}
+                \begin{minipage}[b]{0.75\textwidth}
+                    \begin{block}{Interface-Konvertierung \citep{goetz13}}
+                        \begin{lstlisting}
+Callable<Path> c = ...
+PrivilegedAction<Path> a = c::call;    
+                        \end{lstlisting}
+                    \end{block}
+                \end{minipage}
+            \end{center}
+        \end{onlyenv}
+    \end{onlyenv}
+    \begin{onlyenv}<3-5>
+        \begin{itemize}
+            \item<3-> Klasse des beliebigen Objekts steht vor dem Trennzeichen
+            \item<4-> Objekt auf dem die Methode ausgeführt wird, ist erster Parameter
+        \end{itemize}
+
+        \begin{onlyenv}<5>
+            \begin{center}
+                \begin{minipage}[b]{0.75\textwidth}
+                    \begin{block}{Mehrdeutigkeit mit statischer Methode \citep{Gosling14}}
+                        \begin{lstlisting}
+class C {
+    int size() { return 0; }
+    static int size(Object arg) { return 0; }
+    void test() { Function<C, Integer> f1 = C::size; }
+}
+                        \end{lstlisting}
+                    \end{block}
+                \end{minipage}
+            \end{center}
+        \end{onlyenv}
+    \end{onlyenv}
+    \begin{onlyenv}<6-7>
+        \begin{itemize}
+            \item<6-> Klassenbezeichner steht vor und \texttt{new}-Schlüsselwort nach dem Trennzeichen
+            \item<7-> wenn Konstruktor überladen $\rightarrow$ Compiler wählt Konstruktor der beste 
+            Übereinstimmung mit der Zieltyp hat.
+            \item<7-> Typ von generischen Klassen kann explizit angegeben oder inferiert werden
+        \end{itemize}
+    \end{onlyenv}
+    \begin{onlyenv}<8->
+        \begin{itemize}
+            \item<8-> Typ-Bezeichner des Arrays steht vor und \texttt{new}-Schlüsselwort nach dem Trennzeichen
+            \item<9-> werden behandelt wie Konstruktor mit einem einzelnen \texttt{int}-Parameter 
+        \end{itemize}
+        \begin{onlyenv}<9->
+            \begin{center}
+                \begin{minipage}[b]{0.75\textwidth}
+                    \begin{block}{Spezieller Array-Konstruktor \citep{goetz13}}
+                        \begin{lstlisting}
+IntFunction<int[]> arrayMaker = int[]::new;
+int[] array = arrayMaker.apply(10);
+                        \end{lstlisting}
+                    \end{block}
+                \end{minipage}
+            \end{center}
+        \end{onlyenv}
+    \end{onlyenv}
+\end{frame}
