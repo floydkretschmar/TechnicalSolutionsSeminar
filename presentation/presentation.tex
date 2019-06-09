@@ -1,4 +1,4 @@
-\documentclass[9pt, t]{beamer}
+\documentclass[9pt, t, aspectratio=169]{beamer}
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \usepackage[sfdefault]{roboto}
@@ -16,7 +16,7 @@
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % Zusatzpakete
 % Havard zitier stil
-\usepackage[round]{natbib}
+\usepackage[square,sort,comma,numbers]{natbib}
 % zeilenabstand
 \usepackage{setspace}
 % mehr zitate
@@ -82,11 +82,15 @@ itemsep=1.3em}
 \section{Machine Learning and Fairness: Key Aspects}
 
 \section{The Machine Learning Framework: How is it unfair?}
+\input{presentation/parts/fairness_constraints.tex}
 
 \section{Mathematical Perspective: How to quantify Fairness?}
 
 \section{Legal Perspective: How does ML fit into current legal framework}
 
 \section{Real world impact of ML in terms of fairness}
+
+\section{Conclusion}
+\input{presentation/parts/conclusion.tex}
 
 \end{document}
