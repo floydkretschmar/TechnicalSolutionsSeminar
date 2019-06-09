@@ -1,48 +1,62 @@
 \begin{frame}{The Machine Learning Framework: How is it unfair? \cite{Barocas.2016}}
-    \textbf{Target Variable or class Labels:} \\
+    \underline{\textbf{Target Variable or class Labels:}} \\
     \begin{itemize}
-        \item target variable defines what data miners are looking for
+        \item target variable defines what data miners are looking for (outcome of interest)
         \item class labels divide all possible values of the target variable into mutually exclusive categories
     \end{itemize}
+
     \begin{block}{\textbf{Unfairness happening through:}}
     \begin{itemize}
-        \item Subjective process
-        \item Could be unintentionally be parsed in a way which systematically disadvantages protected classes
+        \item Subjective process (\textbf{e.g.} creditworthiness)
+        \item Could be unintentionally be parsed in a way which \textbf{systematically disadvantages} protected classes (\textbf{e.g.} hiring decisions based on predicted tenure than worker productivity)
     \end{itemize}
         \end{block}
 \end{frame}
 
 \begin{frame}{The Machine Learning Framework: How is it unfair? \cite{Barocas.2016}}
-    \textbf{Training Data:}
-    \begin{itemize}
-        \item Basis of used algorithms
-    \end{itemize}
+    \underline{\textbf{Training Data:}} Basis of used algorithms and outcome of the model \newline 
+
     \begin{block}{\textbf{Unfairness happening through:}}
     \begin{itemize}
         \item Biased training data leads to discriminatory models
         \item 1. Cases in which prejudice has played some role
-        \item 2. Biased sample of the population (under-/overrepresenttation)
+        \item 2. Biased sample of the population (under-/overrepresenttation) leads to skewed results\newline
+        $\rightarrow$ less \textbf{accurate}, \textbf{precise} and \textbf{complete} records for certain classes
     \end{itemize}
         \end{block}
 \end{frame}
 
 \begin{frame}{The Machine Learning Framework: How is it unfair? \cite{Barocas.2016}}
-    \textbf{Feature Selection:}
-    \begin{itemize}
-        \item Observed attributes
-    \end{itemize}
+    \underline{\textbf{Feature Selection:}} Observed attributes \newline 
+    
     \begin{block}{\textbf{Unfairness happening through:}}
     \begin{itemize}
         \item Factors that better account for a protected class are not well represented in the set of selected features 
-        \item e.g. hiring descisions, enourmous weight to reputation of college
+        \item \textbf{e.g.} hiring descisions, enourmous weight to reputation of college
     \end{itemize}
         \end{block}
 \end{frame}
 
 \begin{frame}{The Machine Learning Framework: How is it unfair? \cite{Barocas.2016}}
-    \textbf{Proxies:}
+    \underline{\textbf{Proxies:}} Non sensitive features correlate to class membership \newline
+
+    \begin{block}{\textbf{Unfairness happening through:}}
+    \begin{itemize}
+        \item Do not artificially introduce discriminatory effects into the data mining process
+        \item Can still result in systematically less favorable determinations for members of protected classes
+        \item \textbf{e.g.} same criteria \textbf{correctly sorts} individuals according to their \textbf{predicted likelihood of excelling at a job} also sort individuals according to \textbf{class membership}
+    \end{itemize}
+        \end{block}
 \end{frame}
 
 \begin{frame}{The Machine Learning Framework: How is it unfair? \cite{Barocas.2016}}
-    \textbf{Masking:}
+    \underline{\textbf{Masking:}} Decision makers mask their prejudicial views by using other methods \newline 
+    
+    \begin{block}{\textbf{Unfairness happening through:}}
+    \begin{itemize}
+        \item Bias the collection
+        \item Preserve the known effects of prejudice in prior decision making
+        \item \textbf{etc.}
+    \end{itemize}
+        \end{block}
 \end{frame}
