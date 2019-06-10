@@ -1,4 +1,21 @@
-\begin{frame}{The Machine Learning Framework: How is it unfair? \cite{Barocas.2016, barocas-hardt-narayanan}}
+\begin{frame}{The Machine Learning Framework \cite{Berk.2018}}
+
+    \textbf{Assumption:} Observations are sampled from a joint probability distribution $P(Y, L, S)$ with function $f(L, S)$ linking the predictors to the target variable $Y$
+    \begin{itemize}
+        \item legitimate predictors L 
+        \item protected predictors S
+    \end{itemize}
+         
+    \textbf{Idea:} apply fitting procedure $h(L, S)$ to the data $\Rightarrow$ hypothesis $\hat{f}(L, S)$ that is the source of predictions $\hat{Y}$ \\~\\
+    
+    $\hat{f}(L, S)$ approximates \dots
+    \begin{itemize}
+        \item \dots the true response surface in a biased manner
+        \item \dots an approximation of the true response surface asymptotically unbiased
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{The Machine Learning Framework: Why is it unfair? \cite{Barocas.2016, barocas-hardt-narayanan}}
     \underline{\textbf{Target Variable or class Labels:}} \\
     \begin{itemize}
         \item Target variable defines what data miners are looking for (outcome of interest)
@@ -13,7 +30,7 @@
         \end{block}
 \end{frame}
 
-\begin{frame}{The Machine Learning Framework: How is it unfair? \cite{Barocas.2016, barocas-hardt-narayanan}}
+\begin{frame}{The Machine Learning Framework: Why is it unfair? \cite{Barocas.2016, barocas-hardt-narayanan}}
     \underline{\textbf{Training Data:}} Basis of used algorithms and outcome of the model \newline 
 
     \begin{block}{\textbf{Unfairness happening through:}}
@@ -32,12 +49,12 @@
     \begin{block}{\textbf{Unfairness happening through:}}
     \begin{itemize}
         \item Factors that better account for a protected class are not well represented in the set of selected features 
-        \item \textbf{e.g.} hiring descisions, enourmous weight to reputation of college (equal competent graduates of protected classes at low rates $\rightarrow$ individuals get discriminnated)
+        \item \textbf{e.g.} hiring decisions, enormous weight to reputation of college (equal competent graduates of protected classes at low rates $\Rightarrow$ individuals get discriminated)
     \end{itemize}
         \end{block}
 \end{frame}
 
-\begin{frame}{The Machine Learning Framework: How is it unfair? \cite{Barocas.2016, barocas-hardt-narayanan}}
+\begin{frame}{The Machine Learning Framework: Why is it unfair? \cite{Barocas.2016, barocas-hardt-narayanan}}
     \underline{\textbf{Proxies:}} Non sensitive features correlate to class membership
     \begin{itemize}
         \item Do not artificially introduce discriminatory effects into the data mining process
@@ -52,14 +69,26 @@
         \end{block}
 \end{frame}
 
-\begin{frame}{The Machine Learning Framework: How is it unfair? \cite{Barocas.2016, barocas-hardt-narayanan}}
+\begin{frame}{The Machine Learning Framework: Why is it unfair? \cite{Barocas.2016, barocas-hardt-narayanan}}
     \underline{\textbf{Masking:}} Decision makers mask their prejudicial views by using the mentioned methods \newline 
     
     \begin{block}{\textbf{Unfairness happening through:}}
     \begin{itemize}
         \item Bias the collection
         \item Preserve the known effects of prejudice in prior decision making
-        \item Use prejudical features and/or proxies
+        \item Use prejudicial features and/or proxies
     \end{itemize}
         \end{block}
 \end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=gray}
+\begin{frame}{Mathematical Perspective: How to quantify Fairness? \cite{Berk.2018}}
+\vspace{2cm}
+\begin{block}{\huge Overall:}
+\LARGE 
+    Machine Learning is fundamentally about \textbf{learning from patterns in data}. \\
+    If the \textbf{underlying data contains discriminatory patterns}, machine learning algorithms will pick up on those as well, if they are not accounted for.
+\end{block}
+\end{frame}
+}

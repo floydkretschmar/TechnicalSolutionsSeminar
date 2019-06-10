@@ -23,6 +23,8 @@
 \usepackage{csquotes}
 % spacing of enum items
 \usepackage{enumitem}
+
+\usepackage{makecell}       % better table formatting
 \setitemize{label=\usebeamerfont*{itemize item}%
 \usebeamercolor[fg]{itemize item}
 \usebeamertemplate{itemize item},
@@ -80,21 +82,31 @@ itemsep=1.3em}
 
 \titlepage
 
-\section{Machine Learning and Fairness: Key Aspects}
+% What are the key points of our talk
+\section{Machine Learning and fairness: Key questions}
+\input{presentation/parts/key_aspects.tex}
 
-\section{The Machine Learning Framework: How is it unfair?}
+% Why does the discussion about fairness matter
+\section{Real world impact of ML in terms of fairness}
+\input{presentation/parts/real_world_impact.tex}
+
+% What are the underlying dynamics of ML that create unfairness
+\section{The Machine Learning Framework: Why is it unfair?}
 \input{presentation/parts/fairness_constraints.tex}
+
+% How does our understanding of unfairness of ML conflict/overlap with the current legal framework
+\section{Legal Perspective: How does ML fit into the current legal framework}
+\input{presentation/parts/legal_perspective.tex}
+
+% Short outlook of the rest of the day: Mathematical perspectives/solutions for questions of fairness
+\section{Mathematical Perspective: How to quantify Fairness?}
+\input{presentation/parts/mathematical_perspective.tex}
+
+\section{Conclusion}
+\input{presentation/parts/conclusion.tex}
 
 \section{Concrete Example: Fairness in hiring decisions}
 \input{presentation/parts/example.tex}
 
-\section{Mathematical Perspective: How to quantify Fairness?}
-
-\section{Legal Perspective: How does ML fit into current legal framework}
-
-\section{Real world impact of ML in terms of fairness}
-
-\section{Conclusion}
-\input{presentation/parts/conclusion.tex}
 
 \end{document}

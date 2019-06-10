@@ -1,0 +1,116 @@
+\begin{frame}{Mathematical Perspective: How to quantify Fairness? \cite{Berk.2018}}
+    \textbf{Question:} How to quantify unfairness inherent to machine learning mathematically? \\~\\
+    $\Rightarrow$ Use confusion matrix as basis for fairness considerations
+    \begin{table}[h]
+    \label{tab:confusion}
+    \centering
+    \begin{tabular}{ c|c|c|c } 
+    \toprule
+      & \thead{$\hat{Y}_f$ \\ Failure Predicted} & \thead{$\hat{Y}_s$ \\ Success Predicted} & \thead{Conditional Procedure \\ Accuracy} \\ 
+    \hline
+    \thead{$Y_f$ \\ Failure - A Positive} & \makecell{$t_p$ \\ True Positive} & \makecell{$f_n$ \\ False Negative} & \makecell{$\frac{t_p}{t_p + f_n}$ \\ True Positive Rate} \\ 
+    \hline
+    \thead{$Y_s$ \\ Success - A Negative} & \makecell{$f_p$ \\ False Positive} & \makecell{$t_n$ \\ True Negative} & \makecell{$\frac{t_n}{t_n + f_p}$ \\ True Negative Rate } \\ 
+    \hline
+    \thead{Conditional \\ Use Accuracy} & \makecell{$\frac{t_p}{t_p + f_p}$ \\ Failure Prediction Accuracy} & \makecell{$\frac{t_n}{t_n + f_n}$ \\ Success Prediction Accuracy} & \makecell{$\frac{t_p + t_n}{t_p + f_p + t_n + f_n}$ \\ Overall Accuracy} \\ 
+    \bottomrule
+    \end{tabular}
+    \end{table}
+    
+    \textbf{Idea:} Enforce equality of accuracy across protected subgroups
+\end{frame}
+
+\begin{frame}{Mathematical Perspective: How to quantify Fairness? \cite{Berk.2018}}
+    
+    \begin{itemize}
+        \item \textbf{Overall accuracy equality:} equal probability of correct classification 
+        \item \textbf{Statistical parity:} equal probability of predicting failure/success 
+        \item \textbf{Conditional procedure accuracy equality:} equal probability of correct 
+        classification, given the actual outcome
+        \item \textbf{Conditional use accuracy equality:} equal probability of an actual 
+        outcome, given the prediction
+        \item \textbf{Treatment equality:} equal ratio between false negatives and positives
+        \item \textbf{Total fairness:} All previously notions of fairness are achieved 
+        simultaneously
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mathematical Perspective: How to quantify Fairness? \cite{Berk.2018}}
+    \textbf{Problem:} Tradeoffs between accuracy and fairness \dots 
+
+\begin{block}{\textbf{Fairness and accuracy:}\cite{Berk.2018}}
+    \enquote{[\dots] excluding S will reduce accuracy. Any procedure that even just discounts the role of S will lead to less accuracy.}
+\end{block}
+
+\dots as well as between different kind of fairness necessary 
+
+\begin{block}{\textbf{Impossibility Theorem:}\cite{Chouldechova2017FairPW, 
+DBLP:journals/corr/KleinbergMR16}}
+    \enquote{When the base rates 2 differ by protected group and when there is not separation 3 , one cannot have both conditional use accuracy and equality in the false negative and false positive rates.}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{Mathematical Perspective: How to quantify Fairness? \cite{Berk.2018}}
+    Different technical solutions for creating fair machine learning proposed:
+    
+    \begin{itemize}
+        \item \textbf{Pre-Processing}: elimination of sources of unfairness in the data before formulating $h(L,S)$
+        \item \textbf{In-Processing}: including the adjustments for fairness in the process 
+        of constructing $h(L,S)$
+        \item \textbf{Post-Processing}: $h(L,S)$ is applied first, and its results are adjusted
+        afterwards to account for fairness
+    \end{itemize}
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=gray}
+\begin{frame}{Mathematical Perspective: How to quantify Fairness? \cite{Berk.2018}}
+\vspace{2cm}
+\begin{block}{\huge Overall:}
+\LARGE 
+    There is \textbf{no singular mathematical definition of fairness} and different definitions can be mutually exclusive. \\ 
+    Accounting for fairness will always have an \textbf{impact on the overall prediction accuracy}.
+\end{block}
+\end{frame}
+}
+
+%\begin{frame}{Mathematical Perspective: How to quantify Fairness? \cite{Berk.2018}}
+%    \begin{table}[h]
+%    \centering
+%    \begin{tabular}{ c|c|c|c } 
+%    \toprule
+%      & \thead{$\hat{Y}_f$ \\ Failure Predicted} & \thead{$\hat{Y}_s$ \\ Success Predicted} & \thead{Conditional Procedure \\ Accuracy} \\ 
+%    \hline
+%    \thead{$Y_f$ \\ Failure - A Positive} & \makecell{$t_p$ \\ True Positive} & \makecell{$f_n$ \\ False Negative} & \makecell{$\frac{t_p}{t_p + f_n}$ \\ True Positive Rate} \\ 
+%    \hline
+%    \thead{$Y_s$ \\ Success - A Negative} & \makecell{$f_p$ \\ False Positive} & \makecell{$t_n$ \\ True Negative} & \makecell{$\frac{t_n}{t_n + f_p}$ \\ True Negative Rate } \\ 
+%    \hline
+%    \thead{Conditional \\ Use Accuracy} & \makecell{$\frac{t_p}{t_p + f_p}$ \\ Failure Prediction Accuracy} & \makecell{$\frac{t_n}{t_n + f_n}$ \\ Success Prediction Accuracy} & \makecell{$\frac{t_p + t_n}{t_p + f_p + t_n + f_n}$ \\ Overall Accuracy} \\ 
+%    \bottomrule
+%    \end{tabular}
+%    \end{table}
+%    
+%    \begin{onlyenv}<1>
+%        \textbf{Overall accuracy equality:} equal probability of correct classification 
+%    \end{onlyenv}
+%    \begin{onlyenv}<2>
+%        \textbf{Statistical parity:} equal probability of predicting failure/success 
+%    \end{onlyenv}
+%    \begin{onlyenv}<3>
+%        \textbf{Conditional procedure accuracy equality:} equal probability of correct 
+%        classification, given the actual outcome
+%    \end{onlyenv}
+%    \begin{onlyenv}<4>
+%        \textbf{Conditional use accuracy equality:} equal probability of an actual 
+%        outcome, given the prediction
+%    \end{onlyenv}
+%    \begin{onlyenv}<5>
+%        \textbf{Treatment equality:} equal ratio between false negatives and positives 
+%    \end{onlyenv}
+%    \begin{onlyenv}<6>
+%        \textbf{Total fairness:} All previously notions of fairness are achieved 
+%        simultaneously
+%    \end{onlyenv}
+%\end{frame}
