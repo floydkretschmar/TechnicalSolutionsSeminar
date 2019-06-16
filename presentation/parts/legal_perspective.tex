@@ -1,4 +1,4 @@
-\begin{frame}{Legal Perspective: How does ML fit into the current legal framework \cite{Barocas.2016}}
+\begin{frame}{Legal Perspective: ML and the current legal framework \cite{Barocas.2016}}
 US labor law (Title VII civil rights act) differentiates into \textbf{two kinds} of \textbf{discrimination}: \newline
 
 \begin{block}{\textbf{Disparate treatment} \cite{Barocas.2016, isabel01, isabel02}}
@@ -16,7 +16,7 @@ US labor law (Title VII civil rights act) differentiates into \textbf{two kinds}
 \end{block}
 \end{frame}
 
-\begin{frame}{Legal Perspective: How does ML fit into the current legal framework \cite{isabel01, isabel02}}
+\begin{frame}{Legal Perspective: ML and the current legal framework \cite{isabel01}}
 \begin{figure}
     \vspace{1cm}
     \centering
@@ -26,7 +26,37 @@ US labor law (Title VII civil rights act) differentiates into \textbf{two kinds}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Legal Perspective: How does ML fit into the current legal framework \cite{Barocas.2016}}
+\begin{frame}{Legal Perspective: ML and the current legal framework \cite{isabel01}}
+\begin{figure}
+    \vspace{1cm}
+    \centering
+    \includegraphics[width=\textwidth]{presentation/assets/DisparateTreatImp(1).png}
+    \caption{Decisions of three classifiers whether (1) or not (0) to stop a pedestrian \cite{isabel01, isabel02}}
+    \label{fig:exampleDisp1}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Legal Perspective: ML and the current legal framework \cite{isabel01}}
+\begin{figure}
+    \vspace{1cm}
+    \centering
+    \includegraphics[width=\textwidth]{presentation/assets/DisparateTreatImp(2).png}
+    \caption{Decisions of three classifiers whether (1) or not (0) to stop a pedestrian \cite{isabel01, isabel02}}
+    \label{fig:exampleDisp2}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Legal Perspective: ML and the current legal framework \cite{isabel01}}
+\begin{figure}
+    \vspace{1cm}
+    \centering
+    \includegraphics[width=\textwidth]{presentation/assets/DisparateTreatImp(3).png}
+    \caption{Decisions of three classifiers whether (1) or not (0) to stop a pedestrian \cite{isabel01, isabel02}}
+    \label{fig:exampleDisp3}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Legal Perspective: ML and the current legal framework \cite{Barocas.2016}}
 \underline{\textbf{Liability for disparate treatment:}}\\
 
 \begin{itemize}
@@ -38,7 +68,7 @@ US labor law (Title VII civil rights act) differentiates into \textbf{two kinds}
 \underline{\textbf{Overall:}} disparate treatment doctrine does not do much to regulate discriminatory data mining
 \end{frame}
 
-\begin{frame}{Legal Perspective: How does ML fit into the current legal framework \cite{Barocas.2016}}
+\begin{frame}{Legal Perspective: ML and the current legal framework \cite{Barocas.2016}}
 \underline{\textbf{Liability for disparate impact:}}\\
 
 \begin{itemize}
@@ -57,15 +87,66 @@ $\Rightarrow$ If it's job related:
 
 {
 \setbeamercolor{background canvas}{bg=gray}
-\begin{frame}{Legal Perspective: How does ML fit into the current legal framework \cite{Barocas.2016}}
+\begin{frame}{Legal Perspective: ML and the current legal framework \cite{Barocas.2016}}
 \vspace{2cm}
 \begin{block}{\huge Overall:}
-\LARGE Often data mining will both \textbf{predict future job performance} and have \textbf{disparate impact} (stating a less discriminatory model is often hard)
+\LARGE Often data mining will both \textbf{predict something meaningful} and have \textbf{disparate impact} (stating a less discriminatory model is often hard)
 \end{block}
 \end{frame}
 }
 
-\begin{frame}{Legal Perspective: How does ML fit into the current legal framework \cite{Barocas.2016}}
+\begin{frame}{Legal Perspective: ML and the current legal framework \cite{Singh, automatedDsicrimination}}
+    \underline{\textbf{Outlook on EU laws:}}\\
+    \begin{itemize}
+        \item European Convention on Human Rights Article 14 - Prohibits Discriminiation
+        \item Charter of Fundamental Rights of the EU Article 21 - Prohibits Discriminiation
+        \item Equality law $\Rightarrow$ National Law
+    \end{itemize}
+    \vspace{0.5cm}
+    \underline{\textbf{Some of Protected Characteristics (UK):}}\\[0.75cm]
+    \begin{figure}
+        \centering
+        \begin{subfigure}{.165\textwidth}
+            \centering
+            \includegraphics[width=.4\linewidth]{presentation/assets/age.png}
+            \caption{AGE}
+            \label{fig:sub1}
+        \end{subfigure}%
+        \begin{subfigure}{.165\textwidth}
+            \centering
+            \includegraphics[width=.4\linewidth]{presentation/assets/gender.png}
+            \caption{SEX}
+            \label{fig:sub2}
+        \end{subfigure}%
+        \begin{subfigure}{.165\textwidth}
+            \centering
+            \includegraphics[width=.4\linewidth]{presentation/assets/disability.png}
+            \caption{DISABILITY}
+            \label{fig:sub3}
+        \end{subfigure}%
+        \begin{subfigure}{.165\textwidth}
+            \centering
+            \includegraphics[width=.4\linewidth]{presentation/assets/marriage.png}
+            \caption{MARRIAGE}
+            \label{fig:sub4}
+        \end{subfigure}%
+        \begin{subfigure}{.165\textwidth}
+            \centering
+            \includegraphics[width=.4\linewidth]{presentation/assets/pregnancy.png}
+            \caption{PREGNANCY}
+            \label{fig:sub5}
+        \end{subfigure}%
+        \begin{subfigure}{.165\textwidth}
+            \centering
+            \includegraphics[width=.4\linewidth]{presentation/assets/religion.png}
+            \caption{RELIGION}
+            \label{fig:sub6}
+        \end{subfigure}%
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{Legal Perspective: ML and the current legal framework \cite{Barocas.2016}}
     \underline{\textbf{Issues inside the data mining process:}}\\
     \begin{itemize}
         \item \textbf{Target variable} must reflect judgments about what really is the problem (\textbf{inherit bias})
